@@ -1,4 +1,3 @@
-/*-------переделать-------*/
 .calculator {
 	width: 500px;
 }
@@ -14,7 +13,7 @@
 	height: 80px;
 	background-color: cadetblue;
 }
-.outputWindow1 {
+.outputWindowСolor {
 	color: #09d85f;
 	padding: 5px 15px;
 	border: solid #09d85f 4px;

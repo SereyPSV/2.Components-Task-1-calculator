@@ -1,9 +1,11 @@
+import { Fragment } from 'react';
+import styles from './CreateButtons.module.css';
 let result = '0';
 
 const isNumber = (num) => {
 	return typeof num === 'number' && !isNaN(num);
 };
-
+/* Реализация встроенной функции eval("2+3") // выдаст строку "5" */
 const pseudoEval = (item) => {
 	let i = -1;
 	if (item.indexOf('-') === -1) {
@@ -23,7 +25,11 @@ const pseudoEval = (item) => {
 			return item;
 	}
 };
-
+/**
+ * Логика калькулятора
+ * @param {*} buttons
+ * @returns
+ */
 export const ExecutingLogic = (resultR) => {
 	if (isNumber(Number(resultR))) {
 		if (result === '0' || result[result.length - 1] === '=') {
@@ -54,11 +60,34 @@ export const ExecutingLogic = (resultR) => {
 	}
 	return result;
 };
-
+/**
+ * Проверка в окне вывода калькулятора на наличие в конце строки символа "=" и удаление если есть
+ * @param {*} buttons
+ * @returns
+ */
 export const checkEquals = (item) => {
 	if (item[item.length - 1] === '=') {
 		return item.slice(0, -1);
 	} else {
 		return item;
 	}
+};
+/**
+ * Отрисовка кнопок калькулятора
+ * @param {*} buttons массив со значениями кнопок
+ * @returns кнопки
+ */
+export const CreateButtons = (buttons) => {
+	return (
+		<Fragment>
+			{buttons.map((item) => (
+				<button
+					className={item === '0' ? styles.buttonBottom : styles.button}
+					key={item}
+				>
+					{item}
+				</button>
+			))}
+		</Fragment>
+	);
 };

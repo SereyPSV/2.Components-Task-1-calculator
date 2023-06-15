@@ -1,8 +1,11 @@
 import React from 'react';
+
 import { useState } from 'react';
-import { ExecutingLogic, checkEquals } from './Utils';
+import { CreateButtons, ExecutingLogic, checkEquals } from './Utils';
 import styles from './CreateButtons.module.css';
 
+const number = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+const symbol = ['C', '+', '-', '='];
 let equals = true;
 
 export const CreateCalculator = () => {
@@ -12,29 +15,20 @@ export const CreateCalculator = () => {
 		const output = ExecutingLogic(item.target.textContent);
 		setValue(output);
 	};
+
+	const NumberButtons = () => CreateButtons(number);
+	const SymbolButtons = () => CreateButtons(symbol);
 	return (
 		<div className={styles.calculator}>
-			<div className={equals ? styles.outputWindow : styles.outputWindow1}>
+			<div className={equals ? styles.outputWindow : styles.outputWindowСolor}>
 				{checkEquals(value)}
 			</div>
 			<div className={styles.buttons} onClick={onClick}>
 				<div className={styles.numberButtons}>
-					<button className={styles.button}>1</button>
-					<button className={styles.button}>2</button>
-					<button className={styles.button}>3</button>
-					<button className={styles.button}>4</button>
-					<button className={styles.button}>5</button>
-					<button className={styles.button}>6</button>
-					<button className={styles.button}>7</button>
-					<button className={styles.button}>8</button>
-					<button className={styles.button}>9</button>
-					<button className={styles.buttonBottom}>0</button>
+					<NumberButtons />
 				</div>
 				<div className={styles.symbolButtons}>
-					<button className={styles.button}>C</button>
-					<button className={styles.button}>+</button>
-					<button className={styles.button}>-</button>
-					<button className={styles.button}>=</button>
+					<SymbolButtons />
 				</div>
 			</div>
 		</div>
