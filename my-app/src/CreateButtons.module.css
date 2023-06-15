@@ -1,0 +1,53 @@
+/*-------переделать-------*/
+.calculator {
+	width: 500px;
+}
+.outputWindow {
+	color: #3609d8;
+	padding: 5px 15px;
+	border: solid #09d85f 4px;
+	display: flex;
+	box-sizing: border-box;
+	contain: content;
+	width: 99%;
+	font-size: 45px;
+	height: 80px;
+	background-color: cadetblue;
+}
+.outputWindow1 {
+	color: #09d85f;
+	padding: 5px 15px;
+	border: solid #09d85f 4px;
+	display: flex;
+	box-sizing: border-box;
+	contain: content;
+	width: 99%;
+	font-size: 45px;
+	height: 80px;
+	background-color: cadetblue;
+}
+.buttons {
+	display: flex;
+	width: 99%;
+}
+.numberButtons {
+	width: 75%;
+}
+.numberButtons .button {
+	width: 33%;
+	height: 80px;
+	font-size: 45px;
+}
+.buttonBottom {
+	width: 99%;
+	height: 80px;
+	font-size: 45px;
+}
+.symbolButtons {
+	width: 25%;
+}
+.symbolButtons .button {
+	width: 100%;
+	height: 80px;
+	font-size: 40px;
+}
